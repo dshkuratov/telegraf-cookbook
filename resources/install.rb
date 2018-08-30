@@ -98,7 +98,7 @@ action :create do
       package 'telegraf' do
         version new_resource.install_version
         if platform_family? 'debian'
-          options '--force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"'
+          options '-o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"'
         end
         action :install
       end
